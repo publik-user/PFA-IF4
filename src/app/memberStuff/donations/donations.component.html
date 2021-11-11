@@ -1,0 +1,12 @@
+<app-member-shared></app-member-shared>
+<div id="conCard" class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+    <div *ngIf="this.m" class="card-header">Donor card info</div>
+    <div class="card-body">
+        <h5 class="card-title">Member Details</h5>
+        <h6 class="card-title">nom: {{this.m.nom}}</h6>
+        <h6 class="card-title">prenom: {{this.m.prenom}}</h6>
+        <h6 class="card-title">date de naissance: {{this.m.birthDate}}</h6>
+        <h6 class="card-title">nombre du donneur: {{this.m.cin}}</h6>
+        <p class="card-text">Consentment: I, {{this.m.nom}} {{this.m.prenom}}, consent to donate my organs after my
+            death in order to help whose lifes are threatened or in dire need</p>
+    </div>

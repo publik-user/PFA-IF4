@@ -1,0 +1,74 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<app-member-shared></app-member-shared>
+<div class="wrapper fadeInDown">
+  <div id="formContent" *ngIf="this.m">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!--img src="https://www.flaticon.com/svg/vstatic/svg/1043/1043153.svg?token=exp=1619486322~hmac=9540e618e93072206b30e879265ebfd5" id="icon" alt="User Icon" /-->
+      <h3 style="margin-top: 10px;">Update account</h3>
+    </div>
+
+    <!-- Update up Form -->
+    <form #addForm="ngForm" (ngSubmit)="onUpdateMember(addForm)">
+      <input ngModel={{this.m.cin}} name="cin" type="number" class="fadeIn second" id="UserCin" placeholder="cin"
+        required (ngModelChange)="verifyCinInput(addForm)" disabled>
+
+      <input ngModel={{this.m.nom}} name="Nom" type="text" class="fadeIn third" placeholder="First name" required>
+
+      <input ngModel={{this.m.password}} name="password" type="password" class="fadeIn third" placeholder="password" required>
+
+      <input ngModel={{this.m.prenom}} name="Prenom" type="text" class="fadeIn third" placeholder="Last name" required>
+
+      <input ngModel={{this.m.email}} name="EMAIL" type="email" class="fadeIn third" id="UserEmail" placeholder="E-mail"
+        required>
+
+      <input ngModel={{this.m.address}} name="Address" type="text" class="fadeIn third" placeholder="address" required>
+
+      <select ngModel={{this.m.sexe}} name="Sexe" class="fadeIn third" required>
+        <option value="" disabled selected style="display: none;">Sexe</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input ngModel={{this.m.profession}} name="Profession" type="text" class="fadeIn third" placeholder="profession"
+        required>
+
+      <input ngModel={{this.m.birthDate}} name="BirthDate" type="text" placeholder="Birthday"
+        onfocus="(this.type='date')" class="fadeIn third" id="UserBirthday" onblur="(this.type='text')" required>
+
+
+        <select ngModel={{this.m.IsDonor}} ngModel name="IsDonor" class="fadeIn third" required>
+          <option value="" disabled selected style="display: none;">Are you a donor</option>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+        </select>
+
+
+      <select ngModel={{this.m.bloodType}} name="BloodType" class="fadeIn third" required>
+        <option value="" disabled selected style="display: none;">Blood type</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+
+      
+
+
+      <input type="submit" id="submitBtn" class="fadeIn fourth" value="update" required>
+    </form>
+
+  </div>
+</div>
